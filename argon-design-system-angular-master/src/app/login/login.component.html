@@ -1,0 +1,57 @@
+<main>
+  <section class="section section-shaped section-lg">
+
+    <div class="container ">
+      <div class=" justify-content-center">
+
+          <div class="card bg-secondary shadow border-0">
+            <div class="card-body ">
+              <div class="text-center text-muted mb-4">
+                <small>Sign up with credentials</small>
+              </div>
+              <div class="alert alert-success" *ngIf="success" role="alert">
+                Login with sucess
+              </div>
+              <div class="alert alert-danger" *ngIf="error" role="alert">
+                Please try again
+              </div>
+              <form role="form" (ngSubmit)="login()" [formGroup]="loginForm">
+
+                <div class="form-group" [ngClass]="{'focused':focus===true}">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Email" type="email" formControlName="email" (focus)="focus=true" (blur)="focus=false">
+                  </div>
+                </div>
+                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Password" type="password"  formControlName="password" (focus)="focus1=true" (blur)="focus1=false">
+                  </div>
+                </div>
+                <div class="row my-4">
+                  <div class="col-12">
+                    <div class="custom-control custom-control-alternative custom-checkbox">
+                      <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                      <label class="custom-control-label" for="customCheckRegister">
+                        <span>I agree with the
+                          <a href="javascript:void(0)">Privacy Policy</a>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary mt-4">Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+</main>
